@@ -1,0 +1,46 @@
+
+# Compilación de .NET
+[Bb]in/
+[Oo]bj/
+[Aa]rtifacts/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code
+.vscode/
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
+
+# Archivos de compilación y depuración
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa]nyCPU/
+
+# Archivos temporales
+*.tmp
+*.temp
+*.log
+
+# Configuración local y secretos
+appsettings.Development.json
+secrets.json
+.env
+.env.*
+
+# Certificados y claves privadas
+*.pfx
+*.p12
+*.key
+
+# Cobertura de pruebas
+coverage/
+TestResults/
