@@ -6,7 +6,7 @@ namespace Shipping.Api.Application.Shipment.Mapper
     public static class ShipmentMapper
     {
 
-        public static GetShipmentResponse MapToResponse(IEnumerable<Domain.Application.Model.ShipmentModel> data)
+        public static GetShipmentResponse MapToResponse(IEnumerable<ShipmentModel> data)
         {
 
 
@@ -15,6 +15,7 @@ namespace Shipping.Api.Application.Shipment.Mapper
                 Shipments = data.Select(item => new GetShipment
                 {
                     Id = item.Id,
+                    Os = item.Os,
                     SenderName = item.SenderName,
                     RecipientName = item.RecipientName,
                     Origin = item.Origin,
@@ -25,5 +26,19 @@ namespace Shipping.Api.Application.Shipment.Mapper
             };
         }
 
+        public static GetShipment Map(ShipmentModel data) {
+
+            return new GetShipment
+            {
+                Id = data.Id,
+                Os = data.Os,
+                SenderName = data.SenderName,
+                RecipientName = data.RecipientName,
+                Origin = data.Origin,
+                Destination = data.Destination,
+                Weight = data.Weight,
+                Status = data.Status,
+            };
+        }
     }
 }

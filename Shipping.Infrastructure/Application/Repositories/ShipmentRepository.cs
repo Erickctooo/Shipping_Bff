@@ -37,6 +37,24 @@ namespace Shipping.Infrastructure.Application.Repositories
 
         }
 
+        public async Task<ShipmentModel?> GetAsync(ShipmentRequest request)
+        {
+           
+            using var connection =
+                _connectionFactory.CreateConnection();
 
+            object param = new
+            {
+                Os = request.Os
+            };
+
+            string sql = ShipmentQuery.QueryGet;
+
+            ShipmentModel? shipment =
+                await connection.QueryFirstOrDefaultAsync<ShipmentModel>(sql, param);
+
+            return shipment;
+
+        }
     }
 }

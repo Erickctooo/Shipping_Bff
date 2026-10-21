@@ -12,6 +12,7 @@ namespace Shipping.Infrastructure.Application.Querys
 
             SELECT
                 Id,
+                Os,
                 SenderName,
                 RecipientName,
                 Origin,
@@ -19,6 +20,20 @@ namespace Shipping.Infrastructure.Application.Querys
                 Weight,
                 Status
              FROM dbo.Shipments;";
+
+        internal static string QueryGet = @"
+
+            SELECT
+                Id,
+                Os,
+                SenderName,
+                RecipientName,
+                Origin,
+                Destination,
+                Weight,
+                Status
+             FROM dbo.Shipments
+             Where Os = @os;";
 
     }
 }

@@ -10,6 +10,8 @@
     {
         public int Id { get; set; }
 
+        public int Os {  get; set; }
+
         public string SenderName { get; set; } = string.Empty;
 
         public string RecipientName { get; set; } = string.Empty;

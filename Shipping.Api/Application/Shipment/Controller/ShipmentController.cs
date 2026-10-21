@@ -17,10 +17,24 @@ namespace Shipping.Api.Application.Shipment.Controller
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
-        public async Task<ActionResult<GetShipmentResponse>> GetShipment()
+        public async Task<ActionResult<GetShipmentResponse>> GetShipments()
         {
             GetShipmentResponse result =
-                await _mediator.Send(new GetShipmentRequest());
+                await _mediator.Send(new GetShipmentsRequest());
+
+            return Ok(result);
+        }
+
+
+        [HttpGet("{Os}")]
+        [ProducesResponseType(typeof(GetShipment), (int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
+        public async Task<ActionResult<GetShipment>> GetShipment([FromRoute]  GetShipmentRequest request)
+        {
+            GetShipment result =
+                await _mediator.Send(request);
 
             return Ok(result);
         }

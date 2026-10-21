@@ -12,5 +12,7 @@ namespace Shipping.Domain.Application.Repository
 
         Task<IEnumerable<ShipmentModel>> GetAllAsync();
 
+        Task<ShipmentModel?> GetAsync(ShipmentRequest request);
+
     }
 }
