@@ -1,6 +1,8 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Shipping.Api.Application.Shipment.Query;
+using Shipping.Api.Application.Shipment.Query.Get_AllShiment;
+using Shipping.Api.Application.Shipment.Query.Get_Shipment;
 using System.Net;
 
 namespace Shipping.Api.Application.Shipment.Controller

@@ -3,7 +3,7 @@ using Shipping.Api.Application.Shipment.Mapper;
 using Shipping.Domain.Application.Model;
 using Shipping.Domain.Application.Repository;
 
-namespace Shipping.Api.Application.Shipment.Query
+namespace Shipping.Api.Application.Shipment.Query.Get_AllShiment
 {
     public class GetShipmentsHandler : IRequestHandler<GetShipmentsRequest, GetShipmentResponse>
     {
